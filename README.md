@@ -9,7 +9,7 @@ titanic-data-science-solutions-with-cabin-feature.ipynb
 A fork/derivative of the popular Kaggle notebook. I annotated the new/modified cells with clear headings like "+ Added: CabinDeck feature” and "+ Added: Scaling”.
 
 Key changes (what I did and where)
-1) Keep signal from Cabin via CabinDeck
+1.Keep signal from Cabin via CabinDeck
 Where: Early in the feature-engineering section, right before dropping columns.
 What & Why:
 Extract the first character of Cabin (deck A–G, T; unknown → U).
@@ -33,7 +33,7 @@ for df in (train_df, test_df):
     df['CabinDeck'] = df['CabinDeck'].map(deck_map).astype(int)
 
 
-2) Scale continuous features
+2.Scale continuous features
 
 Where: After feature engineering and before model training.
 What & Why:
@@ -59,6 +59,7 @@ How to run
 1.Environment
   Python 3.x
   pandas, numpy, scikit-learn, matplotlib, seaborn
+  
 2.Data
   Use Kaggle’s Titanic dataset (train.csv, test.csv).
   If running on Kaggle: the dataset is pre-mounted at /kaggle/input/titanic/.
