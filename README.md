@@ -17,16 +17,16 @@ Encode it consistently across train/test (fit the map on the union of both).
 Drop the original sparse Cabin string after extraction.
 Rationale: Deck location captures passenger position on the ship, which is plausibly related to lifeboat access/survival.
 
-Code to check :
-# Create CabinDeck BEFORE dropping Cabin
+#Code to check :
+
 for df in (train_df, test_df):
     df['CabinDeck'] = df['Cabin'].str[0].fillna('U')
 
-# Drop Cabin (and Ticket if desired)
+
 train_df = train_df.drop(columns=['Cabin', 'Ticket'])
 test_df  = test_df.drop(columns=['Cabin', 'Ticket'])
 
-# Encode CabinDeck consistently across train and test
+
 deck_all = pd.concat([train_df['CabinDeck'], test_df['CabinDeck']])
 deck_map = {d:i for i,d in enumerate(sorted(deck_all.unique()))}
 for df in (train_df, test_df):
