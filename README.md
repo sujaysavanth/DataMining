@@ -1,6 +1,6 @@
 Titanic – Data Science Solutions (with Cabin feature)
 This repo extends the classic “Titanic: Data Science Solutions” notebook by adding:
-1.a CabinDeck feature engineered from the raw Cabin column, and
+1.A CabinDeck feature engineered from the raw Cabin column, and
 2.feature scaling for continuous variables.
 These changes improved several model accuracies compared to the original baseline.
 
@@ -11,6 +11,7 @@ A fork/derivative of the popular Kaggle notebook. I annotated the new/modified c
 Key changes (what I did and where)
 1.Keep signal from Cabin via CabinDeck
 Where: Early in the feature-engineering section, right before dropping columns.
+
 What & Why:
 Extract the first character of Cabin (deck A–G, T; unknown → U).
 Encode it consistently across train/test (fit the map on the union of both).
@@ -56,6 +57,7 @@ Takeaways
 
 
 How to run
+
 1.Environment
   Python 3.x
   pandas, numpy, scikit-learn, matplotlib, seaborn
@@ -70,10 +72,15 @@ How to run
   Run all cells. The results tables will be printed at the end.
 
 What stays from the original notebook
+
   Title extraction from Name (with rare-title grouping).
+  
   FamilySize and IsAlone from SibSp + Parch.
+  
   Imputation and encoding for Age, Fare, Embarked, Sex.
+  
   Interaction Age*Class.
+  
   Model suite: SVM, KNN, Logistic Regression, Random Forest, Naive Bayes, Perceptron, SGD, Linear SVC, Decision Tree.
 
 
